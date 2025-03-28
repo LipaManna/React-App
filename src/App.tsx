@@ -1,18 +1,42 @@
-import { Component } from "react";
-import { Provider } from "./components/ui/provider";
 import { Route, Routes } from "react-router-dom";
-import "./assets/custom.css";
-import React from "react";
-import Login from "./pages/resgistration/Login";
+import { Provider } from "./components/ui/provider";
 import SignUp from "./pages/resgistration/SignUp";
+import Login from "./pages/resgistration/Login";
+import ErrorBoundary from "./shared/ErrorBoundary";
+import "./assets/custom.css";
+import "./assets/custom.css";
 
 function App() {
   return (
     <Provider>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/sign-up" element={<SignUp />} />
-              
+        <Route
+          path="/"
+          element={
+            <ErrorBoundary
+              children={<Login />}
+              fallback={<></>}
+            ></ErrorBoundary>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <ErrorBoundary
+              children={<Login />}
+              fallback={<></>}
+            ></ErrorBoundary>
+          }
+        />
+        <Route
+          path="/sign-up"
+          element={
+            <ErrorBoundary
+              children={<SignUp />}
+              fallback={<></>}
+            ></ErrorBoundary>
+          }
+        />
       </Routes>
     </Provider>
   );
