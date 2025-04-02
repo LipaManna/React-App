@@ -2,7 +2,7 @@ import React from "react";
 import { ICardTypeProps } from "../../../types/Registration.type";
 import { Heading } from "@chakra-ui/react";
 
-const getHeadingContent = (type) => {
+const getHeadingContent = (type:string) => {
   if (type === "login") {
     return "Welcome Back!";
   } else if (type === "signup") {

@@ -3,7 +3,7 @@ import { ICardTypeProps } from "../../../types/Registration.type";
 import { chakra } from "@chakra-ui/react";
 const Link = chakra("a");
 
-const getFooterContent = (type) => {
+const getFooterContent = (type: string) => {
   if (type === "login") {
     return (
       <>
@@ -19,7 +19,7 @@ const getFooterContent = (type) => {
 
         <Link
           color="whiteAlpha.700"
-          href="/sign-up"
+          href="/signup"
           display="inline-block"
           textAlign="center"
         >

@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { ICardTypeProps } from "../../../types/Registration.type";
-import { Input, Button } from "@chakra-ui/react";
+import { Input, Button, Text } from "@chakra-ui/react";
 import { Field } from "../../../components/ui/field";
+import { emailValidator } from "../../../utils/EmailValidator";
 
 const getCardFieldContent = (type: string) => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
+  const handleEmailBlur = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    setEmail(e.target.value);
+    !emailValidator(e.target.value) ? setError("Invalid Email!") : setError("");
+  };
   if (type === "login") {
     return (
-      <form action="" className="formWrap">
+      <form action="" className="formWrap" onSubmit={handleSubmit}>
         <Field label="Email ID">
-          <Input placeholder="" type="email" />
+          <Input placeholder="" type="email" onBlur={handleEmailBlur} />
         </Field>
+        {error && (
+          <Text color="red" mt="2">
+            {error}
+          </Text>
+        )}
         <Field label="Password" mt="5">
           <Input placeholder="" type="password" />
         </Field>
@@ -33,13 +50,18 @@ const getCardFieldContent = (type: string) => {
     );
   } else if (type === "signup") {
     return (
-      <form action="" className="formWrap">
+      <form action="" className="formWrap" onSubmit={handleSubmit}>
         <Field label="Full Name">
           <Input placeholder="" type="text" />
         </Field>
-        <Field label="Email ID" mt="5">
+        <Field label="Email ID" mt="5" onBlur={handleEmailBlur}>
           <Input placeholder="" type="email" />
         </Field>
+        {error && (
+          <Text color="red" mt="2">
+            {error}
+          </Text>
+        )}
         <Field label="Password" mt="5">
           <Input placeholder="" type="password" />
         </Field>
