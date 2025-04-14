@@ -3,19 +3,16 @@ import { ICardTypeProps } from "../../../types/Registration.type";
 import { Input, Button, Text } from "@chakra-ui/react";
 import { Field } from "../../../components/ui/field";
 import { emailValidator } from "../../../utils/EmailValidator";
+import { login } from "../../../services/login.service";
+import { useLocation } from "react-router-dom";
 
-const getCardFieldContent = (type: string) => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
-
-  const handleEmailBlur = (e: React.FocusEvent<HTMLInputElement, Element>) => {
-    setEmail(e.target.value);
-    !emailValidator(e.target.value) ? setError("Invalid Email!") : setError("");
-  };
+const getCardFieldContent = (
+  type: string,
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void,
+  handleEmailBlur: (e: React.FocusEvent<HTMLInputElement, Element>) => void,
+  handlePasswordBlur: (e: React.FocusEvent<HTMLInputElement, Element>) => void,
+  error: string
+) => {
   if (type === "login") {
     return (
       <form action="" className="formWrap" onSubmit={handleSubmit}>
@@ -28,7 +25,7 @@ const getCardFieldContent = (type: string) => {
           </Text>
         )}
         <Field label="Password" mt="5">
-          <Input placeholder="" type="password" />
+          <Input placeholder="" type="password" onBlur={handlePasswordBlur} />
         </Field>
         <Button
           rounded="sm"
@@ -90,7 +87,44 @@ const getCardFieldContent = (type: string) => {
 };
 
 const CardFields: React.FC<ICardTypeProps> = ({ type }) => {
-  return getCardFieldContent(type);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const location = useLocation();
+
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const res = await login(email, password);
+    if(res.msgId === 401) {
+      //use toaster to display res.msg
+    } else {
+      //redirect to dashboard
+      location.pathname = ''
+    }
+  };
+
+  const handleEmailBlur = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    setEmail(e.target.value);
+    if (!emailValidator(e.target.value)) {
+      setError("Invalid Email!");
+    } else {
+      setError("");
+    }
+  };
+
+  const handlePasswordBlur = (
+    e: React.FocusEvent<HTMLInputElement, Element>
+  ) => {
+    setPassword(e.target.value);
+  };
+
+  return getCardFieldContent(
+    type,
+    handleSubmit,
+    handleEmailBlur,
+    handlePasswordBlur,
+    error
+  );
 };
 
 export default CardFields;

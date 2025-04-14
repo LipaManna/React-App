@@ -1,10 +1,6 @@
-import React, { useState } from "react";
 import {
-  Button,
   Card,
   Container,
-  Heading,
-  Input,
   Stack,
 } from "@chakra-ui/react";
 import CardBottom from "./components/CardBottom";
