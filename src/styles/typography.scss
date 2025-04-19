@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&display=swap');
+@import './variables';
+
+// Font Families
+$primary-font:  "Lato", sans-serif;
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Base Styles
+body {
+  font-family: $primary-font;
+  font-weight: $font-weight-normal;
+  line-height: 1.6;
+  color: $text_color;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: $primary-font;
+  font-weight: $font-weight-bold;
+  margin-bottom: 0.5rem;
+  color: $text_color;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+// Paragraphs
+p {
+  margin-bottom: 1rem;
+}
+
+// Links
+a {
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Utility Classes
+.text_center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+label{
+  font-size: 0.875rem;
+  color: $text_color;
+}

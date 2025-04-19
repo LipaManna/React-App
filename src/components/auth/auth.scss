@@ -1,0 +1,81 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles/typography.scss';
+
+.auth_wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .login_img{
+        background: url(../../assets/images/login_Img.jpg) no-repeat center / cover;
+    }
+
+    .sign_up_img{
+        background: url(../../assets/images/signup_img.jpg) no-repeat center / cover;
+    }
+
+    .register_img_wrap {
+        height: 100vh;
+        width: 100%;
+        border-radius: 0 0 0 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1{
+            font-weight: $font-weight-extrabold;
+        }
+    }
+
+    > div {
+        flex: 0 0 50%;
+
+        &:first-child p {
+            color: $text_secondary_color;
+            font-weight: $font-weight-bold;
+            font-size: 1rem;
+            margin-bottom: 36px;
+        }
+    }
+
+    h2 {
+        color: $primary_color;
+    }
+
+    .auth_block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        >div {
+            max-width: 390px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .react-aria-TextField{
+            margin-bottom: 24px;
+        }
+
+        .react-aria-Form div:not(.react-aria-Switch div) {
+            width: 100%;
+        }
+
+        button {
+            @include button;
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.no_account{
+    text-align: center;
+    margin-top: 22px;
+    color: $text_secondary_color;
+    .react-aria-Link{
+        color: $primary-color;
+        font-weight: $font-weight-bold;
+        cursor: pointer;
+    }
+}

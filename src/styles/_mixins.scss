@@ -1,0 +1,54 @@
+// @import './variables';
+
+@mixin button(
+  $background-color: $primary-color,
+  $text-color: white,
+  $padding: 13px 20px,
+  $font-size: 0.875rem,
+  $border-radius: 12px,
+  $text_transform: uppercase,
+  $border: none,
+  $cursor: pointer,
+  $transition: background-color 0.3s ease,
+  $hover-background-color: darken($background-color, 10%),
+  $focus-box-shadow-color: rgba($background-color, 0.5),
+  $font-weight: $font-weight-bold,
+  $width: auto,
+) {
+  background-color: $background-color;
+  color: $text-color;
+  padding: $padding;
+  font-size: $font-size;
+  border: $border;
+  border-radius: $border-radius;
+  cursor: $cursor;
+  transition: $transition;
+  text-transform: $text_transform;
+  font-weight: $font-weight;
+  width: $width;
+
+  &:hover {
+    background-color: $hover-background-color;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $focus-box-shadow-color;
+  }
+}
+
+@mixin input(
+  $background: $body-background-color,
+  $border: 1px solid $border-color,
+  $border-radius: 15px,
+  $padding: 16px 20px
+  
+){
+  background-color: $background;
+  border: $border;
+  border-radius: $border-radius;
+  padding: $padding;
+  &::placeholder{
+    color: $text_secondary_color;
+  }
+  }

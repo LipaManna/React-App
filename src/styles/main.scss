@@ -1,0 +1,96 @@
+@import './variables';
+@import './typography.scss';
+@import './mixins';
+// @import "@react-aria/example-theme";
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $body_background_color;
+}
+
+.primary_button{
+    @include button(
+        $background-color: $primary-color,  // Assuming you have $primary-color defined
+        $text-color: white,
+        $padding: 12px 24px,
+        $font-size: 18px,
+      );
+}
+
+.react-aria-Form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+
+.react-aria-Switch {
+    display: flex;
+    align-items: center;
+    gap: 0.571rem;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    forced-color-adjust: none;
+    cursor: pointer;
+  
+    .indicator {
+      width: 3rem;
+      height: 1.5rem;
+      border: 1px solid $border-color;
+      background: var(--background-color);
+      border-radius: 1.143rem;
+      transition: all 200ms;
+  
+      &:before {
+        content: '';
+        display: block;
+        margin: 0.25rem;
+        width: 1rem;
+        height: 1rem;
+        background:  $primary-color;
+        border-radius: 16px;
+        transition: all 200ms;
+      }
+    }
+  
+    &[data-pressed] .indicator {
+      border-color: var(--border-color-pressed);
+  
+      &:before {
+        background: var(--highlight-background-pressed);
+      }
+    }
+  
+    &[data-selected] {
+      .indicator {
+        border-color: $primary-color;
+        background: $primary-color;
+  
+        &:before {
+          background: $body-background-color;
+          transform: translateX(150%);
+        }
+      }
+  
+      &[data-pressed] {
+        .indicator {
+          border-color: $primary-color;
+          background: $primary-color;
+        }
+      }
+    }
+  
+  }
+
+  .react-aria-TextField{
+    display: flex;
+    flex-direction: column;
+    label{
+        margin-bottom: 7px;
+    }
+    input{
+        @include input;
+    }
+  }

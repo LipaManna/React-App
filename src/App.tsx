@@ -1,14 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import { Provider } from "./components/ui/provider";
-import SignUp from "./pages/resgistration/SignUp";
-import Login from "./pages/resgistration/Login";
-import ErrorBoundary from "./shared/ErrorBoundary";
-import "./assets/custom.css";
-import "./assets/custom.css";
+import SignUp from "./components/auth/signup/Signup";
+import Login from "./components/auth/login/Login";
+import ErrorBoundary from "./components/shared/ErrorBoundary";
 
 function App() {
   return (
-    <Provider>
+    
       <Routes>
         <Route
           path="/"
@@ -38,7 +35,6 @@ function App() {
           }
         />
       </Routes>
-    </Provider>
   );
 }
 
