@@ -34,7 +34,7 @@ const Login = () => {
         <div className="auth_block">
           <div>
             <h2>Hi user!</h2>
-            <p>Create a new account</p>
+            <p className="sub_heading">Create a new account</p>
             <Form onSubmit={handleSubmit(submit)}>
               <TextField type="text">
                 <Label>Full Name</Label>

@@ -29,7 +29,7 @@ const Login = () => {
       <div className="auth_block">
         <div>
           <h2>Welcome Back!</h2>
-          <p>Enter your email and password to sign in</p>
+          <p className="sub_heading">Enter your email and password to sign in</p>
           <Form onSubmit={handleSubmit(submit)}>
             <TextField type="email">
               <Label>Email</Label>
