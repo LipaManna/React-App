@@ -15,7 +15,7 @@ import {
   nameSchema,
   passwordSchema,
 } from "../../constants/schema";
-import RegistrationError from "../../shared/registrationError";
+import RegistrationError from "../../shared/RegistrationError";
 
 const Login = () => {
   const navigate = useNavigate();
