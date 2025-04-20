@@ -30,7 +30,7 @@
     > div {
         flex: 0 0 50%;
 
-        &:first-child p {
+        &:first-child > p {
             color: $text_secondary_color;
             font-weight: $font-weight-bold;
             font-size: 1rem;
@@ -54,7 +54,9 @@
         }
 
         .react-aria-TextField{
-            margin-bottom: 24px;
+            margin-bottom: 4px;
+            position: relative;
+            padding-bottom: 25px;
         }
 
         .react-aria-Form div:not(.react-aria-Switch div) {
@@ -65,6 +67,10 @@
             @include button;
             width: 100%;
             margin-top: 1rem;
+        }
+        .error_text{
+            position: absolute;
+            top: 82px;
         }
     }
 }

@@ -10,6 +10,10 @@ body{
     background-color: $body_background_color;
 }
 
+input{
+  outline: none;
+}
+
 .primary_button{
     @include button(
         $background-color: $primary-color,  // Assuming you have $primary-color defined
@@ -92,5 +96,19 @@ body{
     }
     input{
         @include input;
+        &.error_input{
+          border-color: $error_color ;
+        }
     }
+    
   }
+
+  .error_text{
+    color: $error_color;
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding-top: 5px;
+  }
+
+ 
