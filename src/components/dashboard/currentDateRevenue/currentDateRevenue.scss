@@ -1,0 +1,40 @@
+@import '../../../styles/variables';
+@import '../../../styles/typography.scss';
+@import '../../../styles/mixins';
+
+.current_date_revenue_card_row{
+    display: flex;
+    gap: 24px;
+    margin-top: 30px;   
+    li{
+        flex: 0 0 calc(25% - 50px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $color_white;
+        padding: 17px 20px;
+        border-radius: 15px;
+        .card_heading{
+            color: $text_secondary_color;
+            font-weight: $font-weight-bold;
+        }
+        .revenue_value{
+            color: $text-color;
+            font-size: $base_font_size;
+            font-weight: $font-weight-bold;
+        }
+        p{
+            margin: 0;
+        }
+        .current_date_revenue_card_right{
+            background-color: $primary-color;
+            height: 45px;
+            width: 45px;
+            border-radius: 12px;
+            color: $color_white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

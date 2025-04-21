@@ -1,27 +1,29 @@
 import { ReactNode } from "react";
 
-interface ICurrentDateRevenueCardProps {
+export interface ICurrentDateRevenueCardProps {
   cardHeading: string;
-  value: number;
+  value: string;
   increamentOrDecreament?: number;
   img: string | ReactNode;
   key: number;
+  className?:string;
 }
 
 const CurrentDateRevenueCard: React.FC<ICurrentDateRevenueCardProps> = ({
   cardHeading,
   value,
   img,
-  key
+  key,
+  className
 }) => {
   return (
-    <div className="current_date_revenue_card_wrap" key={key}>
+    <li key={key} className={className}>
       <div className="current_date_revenue_card_left">
         <p className="card_heading">{cardHeading}</p>
-        <p>{value}</p>
+        <p className="revenue_value">{value}</p>
       </div>
       <span className="current_date_revenue_card_right">{img}</span>
-    </div>
+    </li>
   );
 };
 
