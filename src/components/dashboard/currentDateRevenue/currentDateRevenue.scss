@@ -14,14 +14,24 @@
         background-color: $color_white;
         padding: 17px 20px;
         border-radius: 15px;
+        &.current_money .revenue_value::before{
+            content: '$';
+        }
+        &.new_clients .revenue_value::before{
+            content: '+';
+        }
+        &.total_sales .revenue_value::before{
+            content: '$';
+        }
         .card_heading{
             color: $text_secondary_color;
             font-weight: $font-weight-bold;
         }
         .revenue_value{
             color: $text-color;
-            font-size: $base_font_size;
+            font-size: $xl_font_size;
             font-weight: $font-weight-bold;
+            position: relative;
         }
         p{
             margin: 0;

@@ -5,6 +5,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #2D3748;
+  font-size: 0.875rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,6 +14,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
   color: #2D3748;
   line-height: 1;
+  margin: 0;
 }
 
 h1 {
@@ -25,6 +27,10 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 p {
@@ -77,7 +83,7 @@ label {
 .auth_wrapper > div {
   flex: 0 0 50%;
 }
-.auth_wrapper > div:first-child p {
+.auth_wrapper > div .sub_heading {
   color: #A0AEC0;
   font-weight: 700;
   font-size: 1rem;
@@ -97,7 +103,9 @@ label {
   padding: 20px;
 }
 .auth_wrapper .auth_block .react-aria-TextField {
-  margin-bottom: 24px;
+  margin-bottom: 4px;
+  position: relative;
+  padding-bottom: 25px;
 }
 .auth_wrapper .auth_block .react-aria-Form div:not(.react-aria-Switch div) {
   width: 100%;
@@ -123,6 +131,10 @@ label {
 .auth_wrapper .auth_block button:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(79, 209, 197, 0.5);
+}
+.auth_wrapper .auth_block .error_text {
+  position: absolute;
+  top: 82px;
 }
 
 .no_account {

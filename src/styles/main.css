@@ -5,6 +5,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #2D3748;
+  font-size: 0.875rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,6 +14,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
   color: #2D3748;
   line-height: 1;
+  margin: 0;
 }
 
 h1 {
@@ -25,6 +27,10 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 p {
@@ -56,12 +62,25 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: #F8F9FA;
+}
+
+input {
+  outline: none;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
 }
 
 .primary_button {
   background-color: #4FD1C5;
-  color: white;
+  color: #fff;
   padding: 12px 24px;
   font-size: 18px;
   border: none;
@@ -78,6 +97,29 @@ body {
 .primary_button:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(79, 209, 197, 0.5);
+}
+
+.secondary_button {
+  background-color: transparent;
+  color: #A0AEC0;
+  padding: 13px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+.secondary_button:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+.secondary_button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 .react-aria-Form {
@@ -125,7 +167,7 @@ body {
   background: #4FD1C5;
 }
 .react-aria-Switch[data-selected] .indicator:before {
-  background: #ffffff;
+  background: #fff;
   transform: translateX(150%);
 }
 .react-aria-Switch[data-selected][data-pressed] .indicator {
@@ -141,9 +183,9 @@ body {
   margin-bottom: 7px;
 }
 .react-aria-TextField input {
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #E2E8F0;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 16px 20px;
 }
 .react-aria-TextField input::-moz-placeholder {
@@ -151,4 +193,69 @@ body {
 }
 .react-aria-TextField input::placeholder {
   color: #A0AEC0;
+}
+.react-aria-TextField input.error_input {
+  border-color: #ed0000;
+}
+
+.error_text {
+  color: #ed0000;
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding-top: 5px;
+}
+
+.react-aria-Breadcrumbs {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+  color: #2D3748;
+}
+.react-aria-Breadcrumbs .react-aria-Breadcrumb {
+  position: relative;
+  padding: 10px 0;
+}
+.react-aria-Breadcrumbs .react-aria-Breadcrumb:not(:last-child) {
+  margin-right: 20px;
+}
+.react-aria-Breadcrumbs .react-aria-Breadcrumb:not(:last-child)::after {
+  content: "/";
+  content: "/"/"";
+  alt: " ";
+  padding: 0 5px;
+  position: absolute;
+  right: -17px;
+  top: 11px;
+}
+.react-aria-Breadcrumbs .react-aria-Link {
+  color: #A0AEC0;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+}
+.react-aria-Breadcrumbs .react-aria-Link[data-hovered] {
+  text-decoration: underline;
+}
+.react-aria-Breadcrumbs .react-aria-Link[data-current] {
+  color: #2D3748;
+}
+.react-aria-Breadcrumbs .react-aria-Link[data-focus-visible]:after {
+  content: "";
+  position: absolute;
+  inset: -2px -4px;
+  border-radius: 6px;
+}
+
+.react-aria-SearchField input {
+  background: url(../assets/images/search.svg) no-repeat 10px/1rem;
+  padding: 12px 36px;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  background-color: #fff;
 }/*# sourceMappingURL=main.css.map */

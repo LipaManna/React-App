@@ -1,0 +1,13 @@
+{
+  "staticArticleData": [
+    {
+      "id": 1,
+      "title": "Pellentesque at nulla.",
+      "header": "National Institute of Technology, Trichy",
+      "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+      "ctaName": null,
+      "ctaURL": "https://ebay.com/viverra/pede/ac.jsp?aliquet=pharetra&maecenas=magna&leo=vestibulum&odio=aliquet&condimentum=ultrices&id=erat&luctus=tortor&nec=sollicitudin&molestie=mi&sed=sit&justo=amet&pellentesque=lobortis&viverra=sapien&pede=sapien&ac=non&diam=mi&cras=integer&pellentesque=ac&volutpat=neque&dui=duis&maecenas=bibendum&tristique=morbi&est=non&et=quam&tempus=nec&semper=dui&est=luctus&quam=rutrum&pharetra=nulla&magna=tellus&ac=in&consequat=sagittis&metus=dui&sapien=vel&ut=nisl&nunc=duis&vestibulum=ac&ante=nibh&ipsum=fusce&primis=lacus&in=purus&faucibus=aliquet&orci=at&luctus=feugiat&et=non&ultrices=pretium&posuere=quis&cubilia=lectus&curae=suspendisse&mauris=potenti&viverra=in&diam=eleifend",
+      "img": "src/assets/images/text_article.svg"
+    }
+  ]
+}

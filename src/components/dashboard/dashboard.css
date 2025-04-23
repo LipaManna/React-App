@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&display=swap");
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #2D3748;
+  font-size: 0.875rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #2D3748;
+  line-height: 1;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+label {
+  font-size: 0.875rem;
+  color: #2D3748;
+}
+
+.common_dashboard_wrap {
+  padding: 20px;
+  display: flex;
+}
+.common_dashboard_wrap .dashboard_content_wrap {
+  width: 100%;
+  padding: 0.5rem 2rem;
+}
+.common_dashboard_wrap .dashboard_content_wrap .dashboard_header_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.common_dashboard_wrap .dashboard_content_wrap .dashboard_header_wrap .search_field_wrap {
+  display: flex;
+  align-items: center;
+}
+.common_dashboard_wrap .dashboard_content_wrap .dashboard_header_wrap .search_field_wrap .react-aria-Link {
+  display: flex;
+  align-items: center;
+  color: #A0AEC0;
+  font-weight: 700;
+  line-height: 1;
+  gap: 5px;
+}
+.common_dashboard_wrap .dashboard_content_wrap .dashboard_header_wrap .search_field_wrap .secondary_button {
+  padding: 0;
+}
+.common_dashboard_wrap .dashboard_content_wrap .dashboard_header_wrap .search_field_wrap *:not(:last-child) {
+  margin-right: 1rem;
+}
+.common_dashboard_wrap .left_panel_wrap {
+  width: 300px;
+}
+.common_dashboard_wrap .left_panel_wrap h1 {
+  font-size: 2rem;
+  padding: 25px 16px;
+  margin-top: 0;
+  position: relative;
+  margin-bottom: 1.25rem;
+  font-weight: 800;
+}
+.common_dashboard_wrap .left_panel_wrap h1:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  border-bottom: 1px solid rgb(224, 225, 226);
+  pointer-events: none;
+}
+.common_dashboard_wrap .left_panel_wrap li.active_item {
+  background-color: #fff;
+  box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+  border-radius: 15px;
+}
+.common_dashboard_wrap .left_panel_wrap li.active_item .react-aria-Link span {
+  color: #fff;
+  background-color: #4FD1C5;
+}
+.common_dashboard_wrap .left_panel_wrap li .react-aria-Link {
+  color: #A0AEC0;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.common_dashboard_wrap .left_panel_wrap li .react-aria-Link span {
+  font-size: 1rem;
+  background-color: #fff;
+  color: #4FD1C5;
+  height: 2rem;
+  width: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  margin-right: 0.75rem;
+  box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+}/*# sourceMappingURL=dashboard.css.map */
