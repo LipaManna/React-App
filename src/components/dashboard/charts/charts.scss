@@ -1,3 +1,8 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/typography.scss';
 @import '../../../styles/mixins.scss';
+
+.bar_chart{
+    background: $gradient;
+    border-radius: 15px;
+}
