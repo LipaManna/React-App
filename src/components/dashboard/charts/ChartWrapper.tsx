@@ -1,3 +1,4 @@
+import ActiveUserElementWrap from "../activeusers/ActiveUserElementWrap";
 import AreaChart from "./AreaChart";
 import Barchart from "./BarChart";
 import "./charts.scss";
@@ -14,13 +15,18 @@ const areaKeys = { apples: "#4FD1C5", bananas: "#7a7f83" };
 const ChartWrapper = () => {
   return (
     <div className="component_wrapper">
+      <div className="common_component_wrap">
       <Barchart />
-      <AreaChart
-        width={800}
-        height={300}
-        data={sampleData}
-        areaKeys={areaKeys}
-      />
+      <ActiveUserElementWrap/>
+      </div>
+      <div className="common_component_wrap" style={{width: "70%"}}>
+        <AreaChart
+          width="100%"
+          height={420}
+          data={sampleData}
+          areaKeys={areaKeys}
+        />
+      </div>
     </div>
   );
 };

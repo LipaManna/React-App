@@ -5,8 +5,14 @@
 .common_dashboard_wrap {
     padding: 20px;
     display: flex;
+    .component_heading {
+            font-size: $xl_font_size;
+            font-weight: $font-weight-bold;
+            margin-top: 1.5rem;
+        }
     .dashboard_content_wrap{
-        width: 100%;
+        width: calc(100% - 370px);
+        margin-left: auto;
         padding: 0.5rem 2rem;
         .dashboard_header_wrap{
           display: flex;
@@ -36,6 +42,7 @@
       }
     .left_panel_wrap{
         width: 300px;
+        position: fixed;
         h1 {
             font-size: 2rem;
             padding: 25px 16px;

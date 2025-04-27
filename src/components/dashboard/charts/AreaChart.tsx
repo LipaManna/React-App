@@ -1,36 +1,55 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3';
 
 type Datum = { date: string; apples: number; bananas: number };
 
 interface StackedAreaChartProps {
-  width: number;
+  width: string; // "100%", "80%", etc.
   height: number;
-  data: { date: string; apples: number; bananas: number }[];
+  data: Datum[];
   areaKeys: { [key: string]: string };
 }
 
 const StackedAreaChart: React.FC<StackedAreaChartProps> = ({ width, height, data, areaKeys }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
+  const [containerWidth, setContainerWidth] = useState<number>(0);
+
+  // Resize observer to track actual width
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new ResizeObserver(entries => {
+      for (let entry of entries) {
+        setContainerWidth(entry.contentRect.width);
+      }
+    });
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
-    if (!svgRef.current || !areaKeys) return; // Ensure areaKeys is defined
+    if (!svgRef.current || !areaKeys || containerWidth === 0) return;
 
     const margin = { top: 20, right: 20, bottom: 30, left: 40 };
-    const innerWidth = width - margin.left - margin.right;
+    const innerWidth = containerWidth - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
 
     // Clear previous content
     d3.select(svgRef.current).selectAll('*').remove();
 
     const svg = d3.select(svgRef.current)
-      .attr("width", width)
-      .attr("height", height);
+      .attr("width", "100%")
+      .attr("height", height)
+      .attr("viewBox", `0 0 ${containerWidth} ${height}`)
+      .attr("preserveAspectRatio", "xMidYMid meet");
 
-    const keys = Object.keys(areaKeys); // Get the keys like 'apples' and 'bananas'
+    const keys = Object.keys(areaKeys);
     const stackData = data.map(d => {
       return keys.reduce((acc, key) => ({ ...acc, [key]: d[key as keyof Datum] }), {});
     });
+
     const stack = d3.stack().keys(keys);
     const series = stack(stackData);
 
@@ -49,10 +68,8 @@ const StackedAreaChart: React.FC<StackedAreaChartProps> = ({ width, height, data
       .y1(d => y(d[1]))
       .curve(d3.curveMonotoneX);
 
-    // Add gradient definitions
     const defs = svg.append("defs");
 
-    // Create the gradients
     Object.keys(areaKeys).forEach((key) => {
       const gradientId = `area-gradient-${key}`;
       const gradient = defs.append("linearGradient")
@@ -60,9 +77,8 @@ const StackedAreaChart: React.FC<StackedAreaChartProps> = ({ width, height, data
         .attr("x1", "0%")
         .attr("y1", "0%")
         .attr("x2", "0%")
-        .attr("y2", "100%"); // Vertical gradient (top to bottom)
+        .attr("y2", "100%");
 
-      // Define gradient stops
       gradient.append("stop")
         .attr("offset", "0%")
         .attr("stop-color", d3.color(areaKeys[key])?.brighter(0.5).toString() || areaKeys[key]);
@@ -72,29 +88,26 @@ const StackedAreaChart: React.FC<StackedAreaChartProps> = ({ width, height, data
         .attr("stop-color", areaKeys[key]);
     });
 
-    // Add the stacked areas with gradients
     const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
     g.selectAll("path")
       .data(series)
       .join("path")
-      .attr("fill", (d, i) => `url(#area-gradient-${keys[i]})`) // Apply gradient fill to each area
+      .attr("fill", (d, i) => `url(#area-gradient-${keys[i]})`)
       .attr("d", area as never)
       .attr("opacity", 0.8);
 
-    // X Axis
     g.append("g")
       .attr("transform", `translate(0,${innerHeight})`)
       .call(d3.axisBottom(x).tickSizeOuter(0));
 
-    // Y Axis
     g.append("g")
       .call(d3.axisLeft(y).ticks(5));
 
-  }, [width, height, data, areaKeys]);
+  }, [containerWidth, height, data, areaKeys]);
 
   return (
-    <div className="common_component_wrap">
+    <div  ref={containerRef} style={{ width }}>
       <svg ref={svgRef} />
     </div>
   );

@@ -1,0 +1,56 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/typography.scss';
+
+
+
+.active_user_card_row_sub_heading {
+    color: $text_secondary_color;
+
+    span {
+        color: $success_color;
+    }
+}
+
+.active_user_card_row {
+    display: flex;
+    gap: 50px;
+
+    li {
+        width: 25%;
+
+        &.active_users_clicks .progress_value::after {
+            content: 'm';
+        }
+
+        &.active_users_sales .progress_value::after {
+            content: '$';
+        }
+
+        .active_user_card_top {
+            display: flex;
+            align-items: center;
+
+            .active_user_icon {
+                @include iconStyle($height: 25px, $width: 25px, $border-radius: 6px)
+            }
+
+            .sub_heading {
+                font-size: 12px;
+                color: $text_secondary_color;
+                font-weight: $font-weight-bold;
+                display: inline-block;
+                padding-left: 10px;
+            }
+        }
+
+        .progress_value {
+            font-size: $xl_font_size;
+            font-weight: $font-weight-bold;
+            margin: 5px 0 0 0;
+        }
+
+
+    }
+
+}

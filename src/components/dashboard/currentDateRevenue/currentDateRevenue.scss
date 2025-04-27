@@ -37,14 +37,7 @@
             margin: 0;
         }
         .current_date_revenue_card_right{
-            background-color: $primary-color;
-            height: 45px;
-            width: 45px;
-            border-radius: 12px;
-            color: $color_white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include iconStyle($height: 45px, $width: 45px, $border-radius: 10px)
         }
     }
 }

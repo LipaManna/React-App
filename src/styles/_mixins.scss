@@ -53,4 +53,23 @@
   }
   }
 
+  @mixin iconStyle(
+$background-color: $primary-color,
+$height: $height,
+$width: $height,
+$border-radius: $radius,
+$color: $color_white,
+$display: flex,
+$align-items: center,
+$justify-content: center,
+  ){
+    width: $width;
+      height: $height;
+      border-radius: $border-radius;
+      background-color: $background-color;
+      color: $color;
+      display: $display;
+      align-items: $align-items;
+      justify-content: $justify-content;
+  }
   

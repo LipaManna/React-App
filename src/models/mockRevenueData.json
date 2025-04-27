@@ -28,5 +28,42 @@
         "img": "IoCart",
         "className": "total_sales"
       }
+    ],
+
+    "activeUsersData": [
+      {
+        "id": 1,
+        "subHeading": "Users",
+        "value": 32984,
+        "img": "IoWallet",
+        "className": "active_users_user",
+        "maxValue": 50000
+      },
+      {
+        "id": 2,
+        "subHeading": "Clicks",
+        "value": 242,
+        "img": "IoRocketSharp",
+        "className": "active_users_clicks",
+        "maxValue":300
+      },
+      {
+        "id": 3,
+        "subHeading": "Sales",
+        "value": 2400,
+        "img": "IoCart",
+        "className": "active_users_sales",
+        "maxValue": 7000
+      },
+      {
+        "id": 4,
+        "subHeading": "Items",
+        "value": 320,
+        "img": "IoAlbums",
+        "className": "active_users_items",
+        "maxValue": 600
+      }
     ]
   }
+
+ 

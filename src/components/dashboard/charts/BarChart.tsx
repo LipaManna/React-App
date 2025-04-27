@@ -10,7 +10,7 @@ const Barchart: React.FC = () => {
 
         // Dimensions and margins
         const width = 620;
-        const height = 300;
+        const height = 220;
         const margin = { top: 20, right: 20, bottom: 30, left: 40 };
 
         // Clear any previous content
@@ -65,9 +65,8 @@ const Barchart: React.FC = () => {
     }, [data]);
 
     return (
-        <div className="common_component_wrap">
+       
             <svg ref={svgRef} className='bar_chart'></svg>
-        </div>
     );
 };
 

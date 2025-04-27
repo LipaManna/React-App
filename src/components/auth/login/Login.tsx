@@ -9,8 +9,8 @@ import {
 } from "react-aria-components";
 import "../auth.scss";
 import { useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import RegistrationError from "../../shared/registrationError";
+import { useFieldArray, useForm } from "react-hook-form";
+import RegistrationError from "../../shared/RegistrationError";
 import { emailSchema, passwordSchema } from "../../constants/schema";
 
 const Login = () => {
@@ -23,6 +23,7 @@ const Login = () => {
   const submit = (data: any) => {
     console.log(data);
   };
+
 
   return (
     <div className="auth_wrapper">

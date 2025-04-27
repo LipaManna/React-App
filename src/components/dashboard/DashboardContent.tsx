@@ -3,6 +3,7 @@ import DashboardHeader from './DashboardHeader'
 import CurrentDateRevenue from './currentDateRevenue/CurrentDateRevenue'
 import ArticlesWrapper from './articles/ArticlesWrapper'
 import ChartWrapper from './charts/ChartWrapper'
+import ProjectsAndOrdersWrap from './projects&orders/ProjectsAndOrdersWrap'
 
 const DashboardContent = () => {
   return (
@@ -12,6 +13,7 @@ const DashboardContent = () => {
       <CurrentDateRevenue/>
       <ArticlesWrapper/>
       <ChartWrapper/>
+      <ProjectsAndOrdersWrap/>
     </div>
   )
 }

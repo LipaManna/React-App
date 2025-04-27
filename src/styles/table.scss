@@ -1,0 +1,21 @@
+@import './variables';
+@import './typography.scss';
+@import './mixins';
+
+.project_table{
+    width: 100%;
+    border-collapse: collapse;
+    th{
+        font-size: 0.675rem;
+        color: $text_secondary_color;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+            text-align: left;
+            border-bottom: 1px solid $border-color;
+            padding: 10px 0;
+    }
+    td{
+        border-bottom: 1px solid $border-color;
+            height: 50px;
+    }
+}

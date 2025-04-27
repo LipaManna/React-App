@@ -22,9 +22,11 @@ const CurrentDateRevenueCard: React.FC<ICurrentDateRevenueCardProps> = ({
     <li key={id} className={className}>
       <div className="current_date_revenue_card_left">
         <p className="card_heading">{cardHeading}</p>
-        <p className="revenue_value">{value}</p>
+        <p className="revenue_value">{value.toLocaleString()}</p>
       </div>
-      <span className="current_date_revenue_card_right">{IconComponent ? <IconComponent size={22} /> : null}</span>
+      <span className="current_date_revenue_card_right">
+        {IconComponent ? <IconComponent size={22} /> : null}
+      </span>
     </li>
   );
 };
