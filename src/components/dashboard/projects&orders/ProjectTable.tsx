@@ -9,13 +9,16 @@ import {
 } from "react-aria-components";
 import '../../../styles/table.scss'
 import ProgressBarComponent from "../activeusers/ProgressBarComponent";
+import AvatarStack, { IMember } from "../../shared/avatar/AvatarStack";
+import { currencyCodes } from "../../../models/enums/currencyCodes";
 
 interface IProjectTableDataProps {
   id: number;
   companyName: string;
   companyLogo: string;
-  members: { fullname: string; avatar: string }[];
+  members:IMember[];
   budget: string;
+  currencyCode: string;
   completionTargetValue: number;
   completionCurrentValue: number;
 }
@@ -39,7 +42,12 @@ const ProjectTable = () => {
     return setProjectTableData([]);
   }, []);
 
+  const sortTableData = (columnName: keyof IProjectTableDataProps) => {
+    return projectTableData.sort((a, b) => Number(a[columnName]) - Number(b[columnName]));
+  }
+
   return (
+    <div className="project_overall_table_wrap">
     <Table aria-label="projects table" className="project_table">
       <TableHeader>
         <Column isRowHeader style={{ width: "250px" }}>
@@ -50,10 +58,7 @@ const ProjectTable = () => {
         <Column style={{ width: "150px" }}>Completion</Column>
       </TableHeader>
       <TableBody>
-        {projectTableData.map((CellData) => {
-          const membersData = CellData.members;
-          const visibleMembers = membersData.slice(0, 4);
-          const extraCount = membersData.length - 4;
+        {sortTableData('budget').map((CellData) => {
           return (
             <Row>
               <Cell>
@@ -63,20 +68,9 @@ const ProjectTable = () => {
                 </span>
               </Cell>
               <Cell>
-                <span>
-                  {visibleMembers.map((member: any) => {
-                    return (
-                      <img
-                        src={member.avatar}
-                        alt={member.fullName}
-                        className="avatar"
-                      />
-                    );
-                  })}
-                </span>
-                {extraCount > 0 && <span className="extraCount">+{extraCount}</span>}
+                <AvatarStack members={CellData.members}/>
               </Cell>
-              <Cell className="budget">{CellData.budget}</Cell>
+              <Cell className="budget">{currencyCodes[CellData.currencyCode as keyof typeof currencyCodes]}{CellData.budget}</Cell>
               <Cell>
                 <span>
                   {Math.round(
@@ -97,6 +91,7 @@ const ProjectTable = () => {
         })}
       </TableBody>
     </Table>
+    </div>
   );
 };
 

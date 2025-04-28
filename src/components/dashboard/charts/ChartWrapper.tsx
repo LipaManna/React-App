@@ -15,7 +15,7 @@ const areaKeys = { apples: "#4FD1C5", bananas: "#7a7f83" };
 const ChartWrapper = () => {
   return (
     <div className="component_wrapper">
-      <div className="common_component_wrap">
+      <div className="common_component_wrap bar_chart_wrap">
       <Barchart />
       <ActiveUserElementWrap/>
       </div>

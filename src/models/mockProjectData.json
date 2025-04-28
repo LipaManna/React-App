@@ -5,19 +5,20 @@
     "companyLogo": "http://dummyimage.com/20x20.png/dddddd/000000",
     "members": [
       {
-        "fullname": "Nicol Jore",
+        "fullName": "Nicol Jore",
         "avatar": "https://robohash.org/occaecatiofficiaqui.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Dina Edlyn",
+        "fullName": "Dina Edlyn",
         "avatar": "https://robohash.org/molestiaeaccusantiumconsequuntur.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Arlyne Bernardoni",
+        "fullName": "Arlyne Bernardoni",
         "avatar": "https://robohash.org/eaetsit.png?size=50x50&set=set1"
       }
     ],
-    "budget": "$2.75",
+    "budget": 2.75,
+    "currencyCode": "USD",
     "completionTargetValue": 323,
     "completionCurrentValue": 63
   },
@@ -27,23 +28,24 @@
     "companyLogo": "http://dummyimage.com/20x20.png/cc0000/ffffff",
     "members": [
       {
-        "fullname": "Dennet Bocking",
+        "fullName": "Dennet Bocking",
         "avatar": "https://robohash.org/estquiaccusamus.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Dixie Gulleford",
+        "fullName": "Dixie Gulleford",
         "avatar": "https://robohash.org/inventoredoloremunde.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Ana Caines",
+        "fullName": "Ana Caines",
         "avatar": "https://robohash.org/harumquidolores.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Nils Aslie",
+        "fullName": "Nils Aslie",
         "avatar": "https://robohash.org/autdolortotam.png?size=50x50&set=set1"
       }
     ],
-    "budget": "$0.48",
+    "budget": 0.48,
+    "currencyCode": "USD",
     "completionTargetValue": 292,
     "completionCurrentValue": 97
   },
@@ -53,11 +55,12 @@
     "companyLogo": "http://dummyimage.com/20x20.png/cc0000/ffffff",
     "members": [
       {
-        "fullname": "Kari Sattin",
+        "fullName": "Kari Sattin",
         "avatar": "https://robohash.org/etquidolorem.png?size=50x50&set=set1"
       }
     ],
-    "budget": "$7.29",
+    "budget": 7.29,
+    "currencyCode": "USD",
     "completionTargetValue": 278,
     "completionCurrentValue": 80
   },
@@ -67,19 +70,20 @@
     "companyLogo": "http://dummyimage.com/20x20.png/ff4444/ffffff",
     "members": [
       {
-        "fullname": "Brittney Lambis",
+        "fullName": "Brittney Lambis",
         "avatar": "https://robohash.org/voluptatequiaaut.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Minna Jakoubek",
+        "fullName": "Minna Jakoubek",
         "avatar": "https://robohash.org/aututcumque.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Cordi Sherston",
+        "fullName": "Cordi Sherston",
         "avatar": "https://robohash.org/optiofacilismaiores.png?size=50x50&set=set1"
       }
     ],
-    "budget": "$4.34",
+    "budget": 4.34,
+    "currencyCode": "USD",
     "completionTargetValue": 113,
     "completionCurrentValue": 82
   },
@@ -89,35 +93,36 @@
     "companyLogo": "http://dummyimage.com/20x20.png/ff4444/ffffff",
     "members": [
       {
-        "fullname": "Casar Fridaye",
+        "fullName": "Casar Fridaye",
         "avatar": "https://robohash.org/modidelenitivoluptate.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Cece Yakovitch",
+        "fullName": "Cece Yakovitch",
         "avatar": "https://robohash.org/nisivoluptatumnon.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Cyrille Rains",
+        "fullName": "Cyrille Rains",
         "avatar": "https://robohash.org/quospraesentiumlaudantium.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Matthieu Lessmare",
+        "fullName": "Matthieu Lessmare",
         "avatar": "https://robohash.org/voluptatemquianemo.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Matthieu Lessmare",
+        "fullName": "Matthieu Lessmare",
         "avatar": "https://robohash.org/voluptatemquianemo.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Matthieu Lessmare",
+        "fullName": "Matthieu Lessmare",
         "avatar": "https://robohash.org/voluptatemquianemo.png?size=50x50&set=set1"
       },
       {
-        "fullname": "Matthieu Lessmare",
+        "fullName": "Matthieu Lessmare",
         "avatar": "https://robohash.org/voluptatemquianemo.png?size=50x50&set=set1"
       }
     ],
-    "budget": "$3.56",
+    "budget": 3.56,
+    "currencyCode": "USD",
     "completionTargetValue": 292,
     "completionCurrentValue": 99
   },
@@ -127,11 +132,12 @@
     "companyLogo": "http://dummyimage.com/20x20.png/5fa2dd/ffffff",
     "members": [
       {
-        "fullname": "Sylas Yukhnini",
+        "fullName": "Sylas Yukhnini",
         "avatar": "https://robohash.org/eiussintest.png?size=50x50&set=set1"
       }
     ],
-    "budget": "$2.87",
+    "budget": 2.87,
+    "currencyCode": "USD",
     "completionTargetValue": 262,
     "completionCurrentValue": 92
   },
@@ -141,11 +147,12 @@
     "companyLogo": "http://dummyimage.com/20x20.png/ff4444/ffffff",
     "members": [
       {
-        "fullname": "Misty Huke",
+        "fullName": "Misty Huke",
         "avatar": "https://robohash.org/voluptasdolorescorporis.png?size=50x50&set=set1"
       }
     ],
-    "budget": "$6.15",
+    "budget": 6.15,
+    "currencyCode": "USD",
     "completionTargetValue": 257,
     "completionCurrentValue": 72
   },
@@ -155,11 +162,12 @@
     "companyLogo": "http://dummyimage.com/20x20.png/dddddd/000000",
     "members": [
       {
-        "fullname": "Carline Tomenson",
+        "fullName": "Carline Tomenson",
         "avatar": "https://robohash.org/rationevoluptateset.png?size=50x50&set=set1"
       }
     ],
-    "budget": "$4.93",
+    "budget": 4.93,
+    "currencyCode": "USD",
     "completionTargetValue": 176,
     "completionCurrentValue": 88
   },
@@ -169,11 +177,12 @@
     "companyLogo": "http://dummyimage.com/20x20.png/ff4444/ffffff",
     "members": [
       {
-        "fullname": "Matthieu Lessmare",
+        "fullName": "Matthieu Lessmare",
         "avatar": "https://robohash.org/voluptatemquianemo.png?size=50x50&set=set1"
       }
     ],
-    "budget": "$6.99",
+    "budget": 6.99,
+    "currencyCode": "USD",
     "completionTargetValue": 232,
     "completionCurrentValue": 80
   },
@@ -183,11 +192,12 @@
     "companyLogo": "http://dummyimage.com/20x20.png/dddddd/000000",
     "members": [
       {
-        "fullname": "Hildegarde Horsewood",
+        "fullName": "Hildegarde Horsewood",
         "avatar": "https://robohash.org/autdolorquia.png?size=50x50&set=set1"
       }
     ],
-    "budget": "$2.74",
+    "budget": 2.74,
+    "currencyCode": "USD",
     "completionTargetValue": 301,
     "completionCurrentValue": 100
   }

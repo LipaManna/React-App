@@ -1,5 +1,5 @@
 import React from 'react'
-import DashboardHeader from './DashboardHeader'
+import DashboardHeader from '../shared/appWrapper/Header'
 import CurrentDateRevenue from './currentDateRevenue/CurrentDateRevenue'
 import ArticlesWrapper from './articles/ArticlesWrapper'
 import ChartWrapper from './charts/ChartWrapper'
@@ -8,7 +8,6 @@ import ProjectsAndOrdersWrap from './projects&orders/ProjectsAndOrdersWrap'
 const DashboardContent = () => {
   return (
     <div className='dashboard_content_wrap'>
-      <DashboardHeader/>
       <h4>Dashboard</h4>
       <CurrentDateRevenue/>
       <ArticlesWrapper/>

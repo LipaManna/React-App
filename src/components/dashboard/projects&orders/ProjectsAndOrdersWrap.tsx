@@ -1,6 +1,6 @@
 import Orders from './Orders'
 import ProjectsWrap from './ProjectsWrap'
-import './projectTable.scss'
+import './projectAndOrder.scss'
 
 const ProjectsAndOrdersWrap = () => {
   return (

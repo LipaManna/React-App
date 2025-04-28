@@ -20,11 +20,18 @@ const Orders = () => {
         return setOrderData([]);
     },[])
   return (
-    <ul className="common_component_wrap">
+     <div  className="common_component_wrap project_order_wrap">
+      <h2 className="component_heading">Orders Overview</h2>
+          <p className="component_sub_heading">
+            <b>+30%</b> this
+            month
+          </p>
+    <ul>
       {orderData.map((orderDataElem) => {
         return <OrderComponent {...orderDataElem} key={orderDataElem.id} />;
       })}
     </ul>
+     </div>
   );
 }
 

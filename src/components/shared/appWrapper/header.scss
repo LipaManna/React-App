@@ -1,0 +1,54 @@
+@import '../../../styles/variables';
+@import '../../../styles/typography';
+@import '../../../styles/mixins';
+
+.dashboard_header_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 420px);
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: 24px;
+    padding: 0 2rem 1rem 2rem;
+    &.profile_header {
+        padding-top: 1rem;
+        align-items: start;
+        background-color: $primary-color;
+        background-image: url(../../../assets/images/abstract.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 15px;
+        height: 270px;
+        .react-aria-Breadcrumbs .react-aria-Link,
+        .search_field_wrap .react-aria-Link,
+        .secondary_button,
+        .react-aria-Breadcrumbs .react-aria-Breadcrumb:not(:last-child)::after{
+
+            color: $color_white;
+        }
+    }
+
+    .search_field_wrap {
+        display: flex;
+        align-items: center;
+
+        .react-aria-Link {
+            display: flex;
+            align-items: center;
+            color: $text_secondary_color;
+            font-weight: $font-weight-bold;
+            line-height: 1;
+            gap: 5px;
+        }
+
+        .secondary_button {
+            padding: 0;
+        }
+
+        *:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}

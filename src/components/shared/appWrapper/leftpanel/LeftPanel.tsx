@@ -4,6 +4,7 @@ import { BsFillCreditCard2FrontFill } from 'react-icons/bs'
 import { FaUserAlt } from 'react-icons/fa'
 import { FaChartSimple } from 'react-icons/fa6'
 import { GoHomeFill } from 'react-icons/go'
+import './leftPanel.scss'
 
 const LeftPanel = () => {
   return (

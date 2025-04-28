@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 
 export interface IOrderComponentProps {
   id: number;
@@ -7,17 +6,24 @@ export interface IOrderComponentProps {
   time: string | number | Date;
 }
 
+function randomDate(start: Date, end: Date) {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
 
-function formatDate(date: string | number | Date) {
-  const dateObj = new Date(date);
+
+function formatDate() {
+  const dateObj = randomDate(new Date(2012, 0, 1), new Date())
+  
 
   if (isNaN(dateObj.getTime())) {
     return { day: "--", month: "--" };
   }
+  
 
   const day = dateObj.getDate();
   const month = dateObj.toLocaleString("default", { month: "short" });
-  return { day, month };
+  const time = dateObj.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  return { day, month, time };
 }
 
 
@@ -25,20 +31,19 @@ const OrderComponent: React.FC<IOrderComponentProps> = ({
   id,
   icon,
   orderName,
-  time,
 }) => {
-  const { day, month } = formatDate(time);
+  const { day, month, time } = formatDate();
 
   return (
-    <li>
+    <li key={id} className="order_list_item">
       <img src={icon} alt="Order Icon" />
-      <div>
-        <p>{orderName}</p>
+      <div className="order_list_item_text">
+        <p className="order_name">{orderName}</p>
         <p>
           <span>
-            {day} {month}
+            {day} {month} {" "}
           </span>
-          <span>{new Date(time).toLocaleString()}</span>
+          <span>{time}</span>
         </p>
       </div>
     </li>

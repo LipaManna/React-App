@@ -2,7 +2,14 @@
 @import '../../../styles/typography.scss';
 @import '../../../styles/mixins.scss';
 
-.bar_chart{
-    background: $gradient;
-    border-radius: 15px;
+
+.bar_chart_wrap {
+    .component_heading{
+        margin-top: 1.5rem;
+    }
+    .bar_chart{
+        background: $gradient;
+        border-radius: 15px;
+    }
 }
+
