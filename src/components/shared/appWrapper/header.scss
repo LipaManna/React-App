@@ -6,13 +6,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(100% - 420px);
+    width: calc(100% - 370px);
     margin-top: 24px;
     margin-left: auto;
-    margin-right: 24px;
-    padding: 0 2rem 1rem 2rem;
+    margin-right: 30px;
+    padding: 0;
     &.profile_header {
-        padding-top: 1rem;
+        padding: 1rem;
         align-items: start;
         background-color: $primary-color;
         background-image: url(../../../assets/images/abstract.svg);
@@ -20,12 +20,13 @@
         background-position: center;
         background-size: cover;
         border-radius: 15px;
+        width: calc(100% - 400px);
         height: 270px;
         .react-aria-Breadcrumbs .react-aria-Link,
         .search_field_wrap .react-aria-Link,
         .secondary_button,
-        .react-aria-Breadcrumbs .react-aria-Breadcrumb:not(:last-child)::after{
-
+        .react-aria-Breadcrumbs .react-aria-Breadcrumb:not(:last-child)::after,
+        .disabled{
             color: $color_white;
         }
     }

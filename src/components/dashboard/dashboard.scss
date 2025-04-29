@@ -5,6 +5,9 @@
 .common_dashboard_wrap {
     padding: 20px;
     display: flex;
+    width: calc(100% - 370px);
+        margin-left: auto;
+        padding: 0.5rem 2rem;
 
     .component_heading {
         font-size: $xl_font_size;
@@ -12,9 +15,7 @@
     }
 
     .dashboard_content_wrap {
-        width: calc(100% - 370px);
-        margin-left: auto;
-        padding: 0.5rem 2rem;
+        
 
       
     }

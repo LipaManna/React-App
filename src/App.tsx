@@ -5,6 +5,7 @@ import ErrorBoundary from "./components/shared/ErrorBoundary";
 import Dashboard from "./components/dashboard/Dashboard";
 import ProfileContentWrap from "./components/dashboard/profile/ProfileContentWrap";
 import AppWrapper from "./components/shared/appWrapper/AppWrapper";
+import Layout from "./Layout";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           <ErrorBoundary children={<SignUp />} fallback={<></>}></ErrorBoundary>
         }
       />
-      <Route element={<AppWrapper />}>
+      <Route element={<Layout />}>
         <Route
           path="/dashboard"
           element={

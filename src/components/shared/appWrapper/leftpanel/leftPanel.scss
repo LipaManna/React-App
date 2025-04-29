@@ -9,6 +9,7 @@
     left: 0;
     height: 100%;
     padding-left: 15px;
+
     h1 {
         font-size: 2rem;
         padding: 25px 16px;
@@ -35,9 +36,15 @@
             box-shadow: $box_shadow_primary;
             border-radius: 15px;
 
-            .react-aria-Link span {
-                color: $color_white;
-                background-color: $primary-color;
+            .react-aria-Link {
+                &:hover {
+                    text-decoration: none;
+                }
+
+                span {
+                    color: $color_white;
+                    background-color: $primary-color;
+                }
             }
         }
 
@@ -50,6 +57,10 @@
             font-weight: $font-weight-bold;
             border-radius: 12px;
             cursor: pointer;
+            &:hover {
+                text-decoration: none;
+            }
+
 
             span {
                 font-size: 1rem;

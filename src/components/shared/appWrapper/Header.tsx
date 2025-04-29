@@ -9,6 +9,7 @@ import {
 import { FaUserAlt } from "react-icons/fa";
 import { IoNotifications } from "react-icons/io5";
 import "./header.scss";
+import { useLocation } from "react-router-dom";
 
 interface IHeaderProps {
   wrapClassName?: string;
@@ -34,13 +35,19 @@ const breadCrumbList = [
 ];
 
 const Header: React.FC<IHeaderProps> = ({ wrapClassName }) => {
+  const location = useLocation();
+  const pathnames = location.pathname.split('/').filter(Boolean);
+  
   return (
     <div className={`${wrapClassName} dashboard_header_wrap`}>
-      <Breadcrumbs isDisabled>
-        {breadCrumbList.map((breadcrumb) => {
+      <Breadcrumbs>
+        {pathnames.map((segment, index) => {
+          const href = "/" + pathnames.slice(0, index + 1).join("/");     
+          const label = segment.charAt(0).toUpperCase() + segment.slice(1);
+
           return (
-            <Breadcrumb>
-              <Link href={breadcrumb.href}>{breadcrumb.label}</Link>
+            <Breadcrumb key={href}>
+              <span className="disabled">Pages </span><Link href={href}>{`/ ` + label}</Link>
             </Breadcrumb>
           );
         })}

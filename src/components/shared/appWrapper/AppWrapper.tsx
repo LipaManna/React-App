@@ -7,10 +7,10 @@ const AppWrapper:React.FC = () => {
     const location = useLocation();
 
   return (
-    <div>
+    <>
       <Header wrapClassName={`${location.pathname.includes("profile") ? 'profile_header' : ''}`}/>
       <LeftPanel />
-    </div>
+    </>
   );
 };
 

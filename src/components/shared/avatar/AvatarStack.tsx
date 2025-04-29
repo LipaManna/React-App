@@ -1,4 +1,5 @@
 import React from "react";
+import './avatar.scss'
 export interface IMember {
   fullName: string;
   avatar: string;

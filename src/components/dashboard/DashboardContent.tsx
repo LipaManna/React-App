@@ -1,5 +1,4 @@
-import React from 'react'
-import DashboardHeader from '../shared/appWrapper/Header'
+
 import CurrentDateRevenue from './currentDateRevenue/CurrentDateRevenue'
 import ArticlesWrapper from './articles/ArticlesWrapper'
 import ChartWrapper from './charts/ChartWrapper'

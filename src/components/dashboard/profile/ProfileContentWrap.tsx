@@ -1,8 +1,10 @@
-import Header from '../../shared/appWrapper/Header'
+import ShowProfileInfoBlock from './ShowProfileInfoBlock'
+import './profile.scss'
 
 const ProfileContentWrap = () => {
   return (
-    <div>
+    <div className='common_dashboard_wrap'>
+      <ShowProfileInfoBlock/>
     </div>
   )
 }
