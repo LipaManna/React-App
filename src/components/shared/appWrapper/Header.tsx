@@ -60,7 +60,7 @@ const Header: React.FC<IHeaderProps> = ({ wrapClassName }) => {
           <span>
             <FaUserAlt />
           </span>
-          Sign In
+          Sign Out
         </Link>
         <Button className="secondary_button">
           <IoNotifications />

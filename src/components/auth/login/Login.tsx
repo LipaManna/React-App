@@ -9,7 +9,7 @@ import {
 } from "react-aria-components";
 import "../auth.scss";
 import { useNavigate } from "react-router-dom";
-import { useFieldArray, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import RegistrationError from "../../shared/RegistrationError";
 import { emailSchema, passwordSchema } from "../../constants/schema";
 
@@ -20,7 +20,7 @@ const Login = () => {
   });
   const { register, control, handleSubmit, formState } = form;
   const { errors } = formState;
-  const submit = (data: any) => {
+  const submit = async (data: any) => {
     console.log(data);
   };
 
