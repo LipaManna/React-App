@@ -4,7 +4,6 @@
 
 .common_dashboard_wrap {
     padding: 20px;
-    display: flex;
     width: calc(100% - 370px);
         margin-left: auto;
         padding: 0.5rem 2rem;
@@ -13,14 +12,4 @@
         font-size: $xl_font_size;
         font-weight: $font-weight-bold;
     }
-
-    .dashboard_content_wrap {
-        
-
-      
-    }
-
-
-
-
 }

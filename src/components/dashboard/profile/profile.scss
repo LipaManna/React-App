@@ -10,17 +10,52 @@
     backdrop-filter: blur(10.5px);
     border-radius: 15px;
     padding: 1rem;
-    transform: translateY(-50%);
+    margin-top: -60px;
     display: flex;
     align-items: center;
     .profile_info{
         padding-left: 20px;
         h2{
             margin: 0;
-            font-size: 1.125rem;
         }
         p{
             margin: 0;
+        }
+    }
+}
+
+.platform_settings_profile_info{
+    display: flex;
+    margin-top: 1.5rem;
+    .generic_profile_info_wrap{
+        flex: 0 0 33%;
+        &.common_component_wrap{
+            margin-top: 0;
+        }
+        h4{
+            font-size: $xl_font_size;
+            margin-bottom: 1rem;
+        }
+        h5{
+            color: $text_secondary_color;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+        li{
+            margin-bottom: 0.75rem;
+            color: $text_secondary_color;
+        }
+        &.profile_info{
+            h4{
+                margin-bottom: 0;
+            }
+            b{
+                padding-right: 10px;
+            }
+            a{
+                color: $primary-color;
+                margin-right: 10px;
+            }
         }
     }
 }

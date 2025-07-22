@@ -12,28 +12,26 @@ function App() {
       <Route
         path="/"
         element={
-          <ErrorBoundary children={<Login />} fallback={<></>}></ErrorBoundary>
+          <ErrorBoundary children={<Login />}/>
         }
       />
       <Route
         path="/login"
         element={
-          <ErrorBoundary children={<Login />} fallback={<></>}></ErrorBoundary>
+          <ErrorBoundary children={<Login />}/>
         }
       />
       <Route
         path="/signup"
         element={
-          <ErrorBoundary children={<SignUp />} fallback={<></>}></ErrorBoundary>
+          <ErrorBoundary children={<SignUp />}/>
         }
       />
       <Route element={<Layout />}>
         <Route
           path="/dashboard"
           element={
-            <ErrorBoundary fallback={<></>}>
-            <Dashboard />
-          </ErrorBoundary>
+            <ErrorBoundary children={<Dashboard />}/>
           }
         />
         <Route
@@ -41,7 +39,6 @@ function App() {
           element={
             <ErrorBoundary
               children={<ProfileContentWrap />}
-              fallback={<></>}
             ></ErrorBoundary>
           }
         />

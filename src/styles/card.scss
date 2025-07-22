@@ -1,0 +1,9 @@
+@import './variables';
+@import './typography.scss';
+@import './mixins';
+
+.card{
+    border-radius: 15px;
+    background-color: $color_white;
+    padding: 24px;
+}

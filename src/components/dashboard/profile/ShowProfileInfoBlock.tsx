@@ -1,8 +1,5 @@
-import { useState } from "react";
 import GenericUserAvatar from "../../shared/avatar/GenericUserAvatar"
 import UploadImg from "../../shared/avatar/UploadImg"
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
 
 const ShowProfileInfoBlock = () => {
   
@@ -13,7 +10,7 @@ const ShowProfileInfoBlock = () => {
       <UploadImg />
       </div>
       <div className="profile_info">
-        <h2>Esthera Jackson</h2>
+        <h2 className="small_h2">Esthera Jackson</h2>
         <p>esthera@simmmple.com</p>
       </div>
     </div>
