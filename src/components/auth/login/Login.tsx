@@ -12,6 +12,10 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import RegistrationError from "../../shared/RegistrationError";
 import { emailSchema, passwordSchema } from "../../constants/schema";
+import { useState } from "react";
+import { login } from "../../../services/AuthService";
+import { fetchUserProfile } from "../../../services/userService";
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -24,6 +28,25 @@ const Login = () => {
     console.log(data);
   };
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if(!email || !password){
+      console.error('email and password are required');
+      return;
+    }
+    try {
+      const userCred = await login({email, password});
+      const uid = userCred.user.uid;
+      const profile = await fetchUserProfile(uid);
+      console.log("Logged in!", profile);
+    } catch (Error) {
+      console.error(Error);
+    }
+  };
+
 
   return (
     <div className="auth_wrapper">
@@ -31,7 +54,7 @@ const Login = () => {
         <div>
           <h2>Welcome Back!</h2>
           <p className="sub_heading">Enter your email and password to sign in</p>
-          <Form onSubmit={handleSubmit(submit)}>
+          <Form onSubmit={handleLogin}>
             <TextField type="email">
               <Label>Email</Label>
               <Input
@@ -40,6 +63,7 @@ const Login = () => {
                   ...emailSchema,
                 })}
                 className={errors.email ? "error_input" : ""}
+                onChange={(e)=>setEmail(e.target.value)}
               />
               <RegistrationError
                 error={{
@@ -58,6 +82,7 @@ const Login = () => {
                   ...passwordSchema,
                 })}
                 className={errors.password ? "error_input" : ""}
+                onChange={(e)=>setPassword(e.target.value)}
               />
               <RegistrationError
                 error={{
