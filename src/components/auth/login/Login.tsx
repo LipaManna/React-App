@@ -13,7 +13,7 @@ import { useForm } from "react-hook-form";
 import RegistrationError from "../../shared/RegistrationError";
 import { emailSchema, passwordSchema } from "../../constants/schema";
 import { useState } from "react";
-import { login } from "../../../services/AuthService";
+import { login, setAuthPersistence } from "../../../services/authService";
 import { fetchUserProfile } from "../../../services/userService";
 
 
@@ -30,6 +30,8 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,13 +39,25 @@ const Login = () => {
       console.error('email and password are required');
       return;
     }
+    
+    setIsLoading(true);
     try {
+      // Set auth persistence based on "Remember Me" checkbox
+      await setAuthPersistence(rememberMe);
+      
       const userCred = await login({email, password});
+      console.log(userCred);
       const uid = userCred.user.uid;
       const profile = await fetchUserProfile(uid);
       console.log("Logged in!", profile);
-    } catch (Error) {
-      console.error(Error);
+      
+      // Navigate to dashboard after successful login
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Login error:", error);
+      // You might want to show an error message to the user here
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -64,6 +78,7 @@ const Login = () => {
                 })}
                 className={errors.email ? "error_input" : ""}
                 onChange={(e)=>setEmail(e.target.value)}
+                disabled={isLoading}
               />
               <RegistrationError
                 error={{
@@ -83,6 +98,7 @@ const Login = () => {
                 })}
                 className={errors.password ? "error_input" : ""}
                 onChange={(e)=>setPassword(e.target.value)}
+                disabled={isLoading}
               />
               <RegistrationError
                 error={{
@@ -93,12 +109,20 @@ const Login = () => {
                 }}
               />
             </TextField>
-            <Switch>
+            <Switch 
+              isSelected={rememberMe}
+              onChange={setRememberMe}
+              isDisabled={isLoading}
+            >
               <div className="indicator" />
               Remember Me
             </Switch>
-            <Button className="primary_button" type="submit">
-              Login
+            <Button 
+              className="primary_button" 
+              type="submit"
+              isDisabled={isLoading}
+            >
+              {isLoading ? "Logging in..." : "Login"}
             </Button>
           </Form>
           <div className="no_account">
