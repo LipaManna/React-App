@@ -36,7 +36,7 @@ const Login = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     if(!email || !password){
-      console.error('email and password are required');
+      // console.error('email and password are required');
       return;
     }
     

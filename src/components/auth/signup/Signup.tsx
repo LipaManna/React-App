@@ -16,8 +16,11 @@ import {
   passwordSchema,
 } from "../../constants/schema";
 import RegistrationError from "../../shared/RegistrationError";
+import { useState } from "react";
+import { setAuthPersistence } from "../../../services/authService";
+import { handleSignup } from "../../../services/signupService";
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
   const form = useForm({
     mode: "onTouched",
@@ -28,6 +31,43 @@ const Login = () => {
     console.log(data);
   };
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [cPassword, setCPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    setIsLoading(true);
+    try {
+      // Get the full name from the form data
+      const formData = form.getValues();
+      const fullName = formData.fullName || '';
+      
+      const result = await handleSignup({
+        email,
+        password,
+        fullName,
+        confirmPassword: cPassword
+      });
+      
+      if (result.success) {
+        console.log('Signup successful:', result);
+        // Navigate to dashboard after successful signup
+        navigate("/dashboard");
+      } else {
+        console.error("Signup failed:", result.error);
+        // You might want to show an error message to the user here
+      }
+    } catch (error) {
+      console.error("Signup error:", error);
+      // You might want to show an error message to the user here
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       <div className="auth_wrapper">
@@ -35,7 +75,7 @@ const Login = () => {
           <div>
             <h2>Hi user!</h2>
             <p className="sub_heading">Create a new account</p>
-            <Form onSubmit={handleSubmit(submit)}>
+            <Form onSubmit={onSubmit}>
               <TextField type="text">
                 <Label>Full Name</Label>
                 <Input
@@ -57,9 +97,8 @@ const Login = () => {
                 <Label>Email</Label>
                 <Input
                   placeholder="Enter your email address"
-                  {...register("email", {
-                    ...emailSchema,
-                  })}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className={errors.email?'error_input':''}
                 />
                 <RegistrationError
@@ -73,9 +112,8 @@ const Login = () => {
                 <Label>Password</Label>
                 <Input
                   placeholder="Enter your password"
-                  {...register("password", {
-                    ...passwordSchema,
-                  })}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className={errors.password?'error_input':''}
                 />
               <RegistrationError
@@ -87,10 +125,14 @@ const Login = () => {
               </TextField>
               <TextField type="password">
                 <Label>Confirm Password</Label>
-                <Input placeholder="Confirm your password" />
+                <Input 
+                  placeholder="Confirm your password"
+                  value={cPassword}
+                  onChange={(e) => setCPassword(e.target.value)}
+                />
               </TextField>
-              <Button className="primary_button" type="submit">
-                sign up
+              <Button className="primary_button" type="submit" isDisabled={isLoading}>
+                {isLoading ? 'Signing up...' : 'Sign up'}
               </Button>
             </Form>
 
@@ -116,4 +158,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

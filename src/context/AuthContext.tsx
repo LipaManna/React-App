@@ -5,9 +5,10 @@ import { auth } from "../firebase/firebaseConfig";
 
 interface IAuthContext{
     user: User | null;
+    loading: boolean;
 }
 
-const AuthContext = createContext<IAuthContext>({ user: null });
+const AuthContext = createContext<IAuthContext>({ user: null, loading: true });
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -28,7 +29,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <AuthContext.Provider value={{ user }}>
+    <AuthContext.Provider value={{ user, loading }}>
       {children}
     </AuthContext.Provider>
   );

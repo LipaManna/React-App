@@ -57,6 +57,29 @@ export const signup = ({email, password}: IEmailAndPass) => {
     return createUserWithEmailAndPassword(auth, email, password);
 };
 
+// Enhanced signup function that creates both auth user and profile
+export const signupWithProfile = async ({email, password, fullName}: IEmailAndPass & {fullName: string}) => {
+    try {
+        // Create user in Firebase Auth
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        
+        // Import the createUserProfile function
+        const { createUserProfile } = await import('./userService');
+        
+        // Create user profile in Firestore
+        const userProfile = await createUserProfile(user, { fullName });
+        
+        return {
+            user,
+            userProfile
+        };
+    } catch (error) {
+        console.error('Error in signup with profile:', error);
+        throw error;
+    }
+};
+
 export const login = ({email, password}: IEmailAndPass) => {
     return signInWithEmailAndPassword(auth, email, password);
 };

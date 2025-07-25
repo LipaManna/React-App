@@ -9,7 +9,8 @@ import {
 import { FaUserAlt } from "react-icons/fa";
 import { IoNotifications } from "react-icons/io5";
 import "./header.scss";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { logout } from "../../../services/authService";
 
 interface IHeaderProps {
   wrapClassName?: string;
@@ -34,9 +35,21 @@ const breadCrumbList = [
   },
 ];
 
+
+
 const Header: React.FC<IHeaderProps> = ({ wrapClassName }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const pathnames = location.pathname.split('/').filter(Boolean);
+
+  const logoutFn = async  () => {
+    try {
+      await logout();
+      navigate('/login');
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  }
   
   return (
     <div className={`${wrapClassName} dashboard_header_wrap`}>
@@ -56,7 +69,7 @@ const Header: React.FC<IHeaderProps> = ({ wrapClassName }) => {
         <SearchField>
           <Input placeholder="Type here..." />
         </SearchField>
-        <Link>
+        <Link onClick={logoutFn}>
           <span>
             <FaUserAlt />
           </span>
